@@ -7,6 +7,15 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string-array name="activity_levels">
+        <item>Bardzo niski (brak aktywności)</item>
+        <item>Niski (lekki ruch)</item>
+        <item>Średni (ćwiczenia 3x/tyg)</item>
+        <item>Wysoki (sport codziennie)</item>
+        <item>Bardzo wysoki (sport zawodowo)</item>
+    </string-array>
+
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus

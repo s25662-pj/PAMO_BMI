@@ -13,7 +13,7 @@
         android:theme="@style/Theme.BMI"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.BMI">
             <intent-filter>
@@ -22,6 +22,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+            <!-- Jeśli masz jakiekolwiek dodatkowe atrybuty, np. temat -->
+        </activity>
+        <activity android:name=".BMICalculatorActivity">
+            <!-- Jeśli masz jakiekolwiek dodatkowe atrybuty, np. temat -->
+        </activity>
+        <activity android:name=".CaloriesCalculatorActivity">
+            <!-- Jeśli masz jakiekolwiek dodatkowe atrybuty, np. temat -->
+        </activity>
+        <activity android:name=".RecipesActivity">
+            <!-- Jeśli masz jakiekolwiek dodatkowe atrybuty, np. temat -->
+        </activity>
+
     </application>
 
 </manifest>
