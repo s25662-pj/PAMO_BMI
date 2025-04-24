@@ -28,37 +28,34 @@ public class BMICalculatorActivity extends AppCompatActivity {
                 String heightStr = heightInput.getText().toString();
 
                 if (!weightStr.isEmpty() && !heightStr.isEmpty()) {
-                    double weight = Double.parseDouble(weightStr);
-                    double heightCm = Double.parseDouble(heightStr);
+                    try {
+                        double weight = Double.parseDouble(weightStr);
+                        double heightCm = Double.parseDouble(heightStr);
 
-                    if (heightCm > 0) {
-                        // Konwersja wzrostu z cm na metry
-                        double heightMeters = heightCm / 100;
-                        double bmi = weight / (heightMeters * heightMeters);
+                        double bmi = BmiUtils.calculateBmi(weight, heightCm);
+                        String classification = BmiUtils.classifyBmi(bmi);
 
-                        // Klasyfikacja BMI i zmiana koloru
-                        String classification;
                         int color;
-
-                        if (bmi < 18.5) {
-                            classification = "Niedowaga";
-                            color = Color.YELLOW;
-                        } else if (bmi >= 18.5 && bmi < 25) {
-                            classification = "Optimum";
-                            color = Color.GREEN;
-                        } else if (bmi >= 25 && bmi < 30) {
-                            classification = "Nadwaga";
-                            color = Color.YELLOW;
-                        } else {
-                            classification = "Otyłość";
-                            color = Color.RED;
+                        switch (classification) {
+                            case "Niedowaga":
+                                color = Color.YELLOW;
+                                break;
+                            case "Optimum":
+                                color = Color.GREEN;
+                                break;
+                            case "Nadwaga":
+                                color = Color.YELLOW;
+                                break;
+                            default:
+                                color = Color.RED;
+                                break;
                         }
 
-                        // Ustawienie wyniku i koloru
                         resultText.setText(String.format("Twoje BMI: %.2f\n%s", bmi, classification));
                         resultText.setTextColor(color);
-                    } else {
-                        resultText.setText("Wzrost musi być większy niż 0!");
+
+                    } catch (IllegalArgumentException e) {
+                        resultText.setText(e.getMessage());
                         resultText.setTextColor(Color.RED);
                     }
                 } else {
@@ -69,4 +66,3 @@ public class BMICalculatorActivity extends AppCompatActivity {
         });
     }
 }
-

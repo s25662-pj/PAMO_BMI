@@ -15,6 +15,7 @@
         <item>Bardzo wysoki (sport zawodowo)</item>
     </string-array>
 
+    <string name="logo_description">Logo aplikacji</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
