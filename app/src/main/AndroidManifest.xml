@@ -34,6 +34,8 @@
         <activity android:name=".RecipesActivity">
             <!-- Jeśli masz jakiekolwiek dodatkowe atrybuty, np. temat -->
         </activity>
+        <activity android:name=".ShoppingListActivity"/>
+
 
     </application>
 

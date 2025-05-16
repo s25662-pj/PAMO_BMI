@@ -32,6 +32,12 @@
             android:layout_height="wrap_content"
             android:text="Rekomendacje Kulinarne" />
 
+        <Button
+            android:id="@+id/btn_shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lista zakupów" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
