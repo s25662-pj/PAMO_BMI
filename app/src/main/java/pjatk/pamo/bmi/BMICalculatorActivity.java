@@ -8,18 +8,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.db.williamchart.view.LineChartView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import kotlin.Pair;
+
 
 public class BMICalculatorActivity extends AppCompatActivity {
 
+    private LineChartView lineChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmicalculator);
-
         EditText weightInput = findViewById(R.id.weightInput);
         EditText heightInput = findViewById(R.id.heightInput);
         Button calculateButton = findViewById(R.id.calculateButton);
         TextView resultText = findViewById(R.id.resultText);
+        LineChartView lineChart = findViewById(R.id.lineChart);
+
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,5 +76,19 @@ public class BMICalculatorActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        List<kotlin.Pair<String, Float>> entries = new ArrayList<>();
+        entries.add(new kotlin.Pair<>("Pn", 60f));
+        entries.add(new kotlin.Pair<>("Wt", 62f));
+        entries.add(new kotlin.Pair<>("Sr", 58f));
+        entries.add(new kotlin.Pair<>("Cz", 56f));
+        entries.add(new kotlin.Pair<>("Pt", 52f));
+        entries.add(new Pair<>("So", 50f));
+
+        lineChart.show(entries);
+
+
     }
 }

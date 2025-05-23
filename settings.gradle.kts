@@ -16,8 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
-rootProject.name = "BMI"
+rootProject.name = "BMICalc"
 include(":app")
+include(":Exercises")
